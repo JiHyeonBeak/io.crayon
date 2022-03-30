@@ -1,0 +1,31 @@
+buildscript {
+    ext {   // build.gradle에서 사용하는 전역변수를 선언하는 곳
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        //   jcenter() 지원 중단
+    }
+    dependencies { // crayon 프로젝트의 플러그인 의존성 관리
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.7.RELEASE")
+    }
+}
+
+    // 필수 플러그인
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management' // 스프링 부트의 의존성 관리를 위한 플러그인이다.
+
+    group 'io.crayon'
+    version '1.0-SNAPSHOT'
+    sourceCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web' // 버전 명시를 하지 않으면 상기 스프링부트의 버전을 자동으로 따라간다.
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    }
