@@ -28,4 +28,8 @@ buildscript {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter-web' // 버전 명시를 하지 않으면 상기 스프링부트의 버전을 자동으로 따라간다.
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation 'org.projectlombok:lombok'
+        testImplementation 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
     }
